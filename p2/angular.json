@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Parcial2": {
+    "p2": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/parcial2",
+            "outputPath": "dist/p2",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,15 +35,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -63,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Parcial2:build:production"
+              "buildTarget": "p2:build:production"
             },
             "development": {
-              "buildTarget": "Parcial2:build:development"
+              "buildTarget": "p2:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "Parcial2:build"
+            "buildTarget": "p2:build"
           }
         },
         "test": {
@@ -90,7 +94,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -100,6 +103,6 @@
     }
   },
   "cli": {
-    "analytics": "29903d16-7d2e-4354-83e6-7b56d71d5937"
+    "analytics": "691136ab-e217-4571-af08-45e883d6ce59"
   }
 }
